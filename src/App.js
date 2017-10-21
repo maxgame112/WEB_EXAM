@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Home from './Components/Home.component';
+import President from './Components/President.component';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
+      <BrowserRouter>
+
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <ul>
+          <li><li><NavLink to="/" activeClassName="active">Home</NavLink></li></li>
+          <li><li><NavLink to="/President" activeClassName="active">Other page</NavLink></li></li>
+          </ul>
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+
+        <Switch>
+            <Route path="/" component={Home} exact={true} />
+            <Route path="/President" component={President} />
+            </Switch>
         </p>
+
+
       </div>
+      </BrowserRouter>
     );
   }
 }
