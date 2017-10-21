@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from './Components/Home.component';
+import Page2 from './Components/Page2.component';
+
 import President from './Components/President.component';
+
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 
 class App extends Component {
@@ -15,7 +18,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <ul>
           <li><li><NavLink to="/" activeClassName="active">Home</NavLink></li></li>
-          <li><li><NavLink to="/President" activeClassName="active">Other page</NavLink></li></li>
+          <li><li><NavLink to="/page2" activeClassName="active">Other page</NavLink></li></li>
           </ul>
           <h1 className="App-title">Welcome to React</h1>
         </header>
@@ -23,7 +26,7 @@ class App extends Component {
 
         <Switch>
             <Route path="/" component={Home} exact={true} />
-            <Route path="/President" component={President} />
+            <Route path="/Page2" component={Page2} />
             </Switch>
         </p>
 
